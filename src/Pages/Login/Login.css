@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@400&family=Zen+Kaku+Gothic+New:wght@300&display=swap');
+
+
+
+.Login-container{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid #e6e8eb;
+    font-family:"Roboto";
+    width: 350px;
+    height: 500px;
+    margin:5% auto;
+    padding: 38px 40px;
+    
+}
+
+.logo{
+    text-align: center;
+    font-size: 23px;
+}
+
+.header{
+    font-size: 20px;
+    text-align: center;
+    padding-top:10px;
+    font-weight: normal;
+    margin: 5px;
+}
+
+.text{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 5px;
+    font-family: arial;
+    font-weight: lighter;
+    text-transform: capitalize;
+}
+
+.text1{
+    margin: 0;
+    padding-top: 5px;
+    color:#1670e6;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.text2{
+    padding-bottom: 4px;
+    padding-top: 50px;
+    color: #707375;
+    font-size: 16px;
+    line-height: 1.4286;
+}
+
+.text2 > a{
+    text-decoration: none;
+    border-radius: 4px;
+    color: #1a73e8;
+    font-weight: 500;
+    letter-spacing: .25px;
+    position: relative;
+    outline: 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0 40px 0;
+    font-size: .870rem;
+}
+@media only screen and (max-width: 375px) {
+    .Login-container{
+        width: auto;
+        margin: 5% 0;
+        border: none;
+        padding: 30px 30px;
+    }
+}
