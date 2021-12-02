@@ -7,8 +7,7 @@ export class Forget extends Component {
     render() {
         return (
             <div class="forget-email-body">
-            <div class="logo"> Fundoo
-            </div>
+            <div class="logo"> Fundoo</div>
             <h1 class="email-header">Find your email</h1>
             <span class="email-text">Enter your phone number or recovery email</span>
             <form>
