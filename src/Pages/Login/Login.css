@@ -1,50 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@400&family=Zen+Kaku+Gothic+New:wght@300&display=swap');
 
+
+
 .Login-container{
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    border: 2px solid #e6e8eb;
+    border: 1px solid #e6e8eb;
     font-family:"Roboto";
     width: 350px;
     height: 500px;
     margin:5% auto;
-    padding: 39px 40px;
+    padding: 38px 40px;
     
 }
 
 .logo{
-    font-size: 24px;
     text-align: center;
+    font-size: 23px;
 }
 
 .header{
     font-size: 20px;
     text-align: center;
-    margin: 5px;
     padding-top:10px;
     font-weight: normal;
+    margin: 5px;
 }
 
 .text{
     text-align: center;
     font-size: 18px;
+    padding-top: 5px;
     font-family: arial;
     font-weight: lighter;
-    padding-top: 5px;
     text-transform: capitalize;
 }
 
 .text1{
     margin: 0;
+    padding-top: 5px;
     color:#1670e6;
     font-size: 14px;
-    padding-top: 5px;
     cursor: pointer;
 }
 
 .text2{
-    padding-bottom: 5px;
+    padding-bottom: 4px;
     padding-top: 50px;
     color: #707375;
     font-size: 16px;
@@ -58,6 +60,7 @@
     font-weight: 500;
     letter-spacing: .25px;
     position: relative;
+    outline: 0;
 }
 
 .buttons{
