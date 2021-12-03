@@ -7,10 +7,10 @@ import Reset from './Pages/Reset/Reset';
 function App() {
   return (
     <div className="App">
-        {/* <Registration /> */}
+         {/* <Registration />  */}
        {/* <Login /> */}
-         {/*<Forget/> */}
-         <Reset/> 
+         {/* <Forget/> */}
+         <Reset/>
     </div>
   );
 }
