@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import './Reset.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+//import Userservice from '../../Service/Userservice'
+//let userservice = new Userservice();
+
 
 export class Reset extends Component {
     constructor(props) {
@@ -30,18 +33,35 @@ export class Reset extends Component {
         var isValid = this.validation();
         if (!isValid) {
           console.log("successful validation");
-        }
-      };
-      changeHandle =(e)=>{
-          this.setState({  
-          [e.target.name]: e.target.value 
+          let data = {
+            "newpassword":this.state.newpassword ,
+            "confirmpassword":this.state.confirmPwd,
+            }
+        //    Userservice.Registration("http://fundoonotes.incubation.bridgelabz.com/api/user/reset-password",data)
+        //    .then(()=>{
+        //        console.log("successfull reset");
+        //    })
+        //    .catch((err)=>{
+         //       console.log(err);
+        //    });
+       }
+    };
+      changeHandle =()=>{
+        this.setState({
+            [e.target.name]:e.target.value
         })
-    }
-    
+     }
     render() {
         return (
             <div class="Reset-password-body">
-            <div class="logo"> Fundoo</div>
+            <div class="logo">
+                        <span style={{color:'rgb(17,142,226'}}>F</span>
+                        <span style={{color:'rgb(234,67,53'}}>U</span>
+                        <span style={{color:'rgb(251,188,5'}}>N</span>
+                        <span style={{color:'rgb(17,142,226'}}>D</span>
+                        <span style={{color:'rgb(234,67,53'}}>o</span>
+                        <span style={{color:'rgb(234,67,53'}}>o</span>
+            </div>
             <h1 class="Password-header">Reset password</h1>
             <span class="password-text">We'll never share your password with anyone else</span>
             <form>

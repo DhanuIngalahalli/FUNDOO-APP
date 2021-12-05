@@ -3,7 +3,8 @@ import './Registration.css';
 import TextField from '@mui/material/TextField'
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
-
+import Userservice from '../../Service/Userservice'
+let userservice = new Userservice();
 
 export class Registration extends Component {
     constructor(props) {
@@ -41,34 +42,55 @@ export class Registration extends Component {
         var isValid = this.validation();
         if (!isValid) {
           console.log("successful validation");
+          let data = {
+            "firstName":this.state.firstName,
+            "lastName":this.state.lastName,
+            "email":this.state.userName,
+            "password":this.state.password,
+            "service":"advance"
+         }
+         userservice.Registration("http://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp", data)
+              .then(()=>{
+                  console.log("sucessfully registered");
+              })
+              .catch ((err)=> {
+                  console.log(err);
+              });
         }
       };
+      
       
       changeHandle =(e)=>{
         this.setState({  
           [e.target.name]: e.target.value 
         })
+        
     }
-
-    render() {
+    
+     render() {
         return (
                  <div class="Outer-Frame">
                     <div class="Left-side">
                         <div class="Left-side-header">
-                            Fundoo
+                        <span style={{color:'rgb(17,142,226'}}>F</span>
+                        <span style={{color:'rgb(234,67,53'}}>U</span>
+                        <span style={{color:'rgb(251,188,5'}}>N</span>
+                        <span style={{color:'rgb(17,142,226'}}>D</span>
+                        <span style={{color:'rgb(251,70,60'}}>o</span>
+                        <span style={{color:'rgb(251,70,60'}}>o</span>
                          </div>
                         <div class="section-first">
                             <div class="section-first-header">Create your Fundoo Account</div>
                             <div id="Reg form">
                         <div class="name">
-                            <TextField  label="first name" id="firstName" size="small" margin="normal"error={this.state.firsterror} helperText={this.state.firsterror ? "enter First name" : ''} onChange={e=> this.changeHandle(e)} sx={{marginRight:"5px"}} />
-                            <TextField  label="last name" id="lastName" size="small" margin="normal"error={this.state.lasterror} helperText={this.state.lasterror ? "enter Last name" : ''} onChange={e=> this.changeHandle(e)} sx={{marginLeft:"5px"}}/>
+                            <TextField  label="first name" name="firstName" size="small" margin="normal"error={this.state.firsterror} helperText={this.state.firsterror ? "enter First name" : ''} onChange={e=> this.changeHandle(e)} sx={{marginRight:"5px"}} />
+                            <TextField  label="last name" name="lastName" size="small" margin="normal"error={this.state.lasterror} helperText={this.state.lasterror ? "enter Last name" : ''} onChange={e=> this.changeHandle(e)} sx={{marginLeft:"5px"}}/>
                         </div>
-                        <TextField fullWidth label="user name"  id="userName" size="small" margin="normal" error={this.state.userNameerror} helperText={this.state.userNameerror ? "enter Username" : 'you can use numbers,letters and periods'} onChange={e=> this.changeHandle(e)} />
+                        <TextField fullWidth label="user name"  name="userName" size="small" margin="normal" error={this.state.userNameerror} helperText={this.state.userNameerror ? "enter Username" : 'you can use numbers,letters and periods'} onChange={e=> this.changeHandle(e)} />
                         <div><p class="text">Use my current email address instead</p></div>
                         <div class="password">
-                            <TextField label="password" id="password" size="small" margin="normal" error={this.state.passworderror} helperText={this.state.passworderror ? "enter Password" : ''} onChange={e=> this.changeHandle(e)}sx={{marginRight:"5px"}} />
-                            <TextField label="confirm" id="passwordconfirm" size="small" margin="normal"error={this.state.confirmpwderror} helperText={this.state.confirmpwderror ? "Re-enter password" : ''} onChange={e=> this.changeHandle(e)} sx={{marginLeft:"5px"}}/>
+                            <TextField label="password" name="password" size="small" margin="normal" error={this.state.passworderror} helperText={this.state.passworderror ? "enter Password" : ''} onChange={e=> this.changeHandle(e)}sx={{marginRight:"5px"}} />
+                            <TextField label="confirm" name="confirm" size="small" margin="normal"error={this.state.confirmpwderror} helperText={this.state.confirmpwderror ? "Re-enter password" : ''} onChange={e=> this.changeHandle(e)} sx={{marginLeft:"5px"}}/>
                         </div>
                         <p class="pwdpattern">Use 8 or more characters with a mix of letters, numbers and symbols</p>
                         <div class="check">
