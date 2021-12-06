@@ -62,7 +62,7 @@ changeHandle =(e)=>{
             <form>
                 <TextField fullWidth label="Phone number or email" name="emailorPhone" size="medium" margin="normal" sx={{marginTop:'40px'}}/>
                 <div class="button">
-                        <Button variant="contained"> Next </Button>
+                <Button variant="contained" onClick={this.next}>Next</Button>
                 </div>
             </form>
         </div>
