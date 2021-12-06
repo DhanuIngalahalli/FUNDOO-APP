@@ -6,46 +6,48 @@ import Userservice from '../../Service/Userservice'
 let userservice = new Userservice();
 
 export class Forget extends Component {
-  constructor(props) {
-      super(props);
-
-      this.state = {
-          emailorPhone: " ",
-          emailorPhoneerror: false,
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            emailorPhone: " ",
+            emailorPhoneerror: false,
+        };
+      }
+    
+      validation = () => {
+        let isError = false;
+        const error = this.state;
+        error.emailorPhoneerror = this.state.emailorPhone === " " ? true : false;
+        this.setState({   //setState method is used for updating the value
+          ...error,
+        });
+        isError = error.emailorPhoneerror;
+        return isError;
       };
-  }
-  validation = () => {
-    let isError = false;
-    const error = this.state;
-    error.emailorPhoneerror = this.state.emailorPhone === " " ? true : false;
-    this.setState({   
-      ...error,
-    });
-    isError = error.emailorPhoneerror;
-    return isError;
-};
-
-next = () => {
-  var isValid = this.validation();
-  if (!isValid) {
-    console.log("successful validation");
-    let data = {
-      "email" : this.state.emailorPhone,
-  };
-  userservice.Forget("http://fundoonotes.incubation.bridgelabz.com/api/user/reset", data)
-      .then(()=>{
-          console.log("successfull");
-      })
-      .catch ((err)=> {
-          console.log(err);
-      });
-   }
+    
+      next = () => {
+        var isValid = this.validation();
+        if (!isValid) {
+          console.log("successsss validation");
+          let data = {
+            "email" : this.state.emailorPhone,
+        };
+        userservice.Forget("http://fundoonotes.incubation.bridgelabz.com/api/user/reset", data)
+            .then(()=>{
+                console.log("Reset mail sent successfully");
+            })
+            .catch ((err)=> {
+                console.log(err);
+            });
+    }
 }
-changeHandle =(e)=>{
-    this.setState({  
-      [e.target.name]: e.target.value 
-    })
-}
+    
+      changeHandle =(e)=>{
+          this.setState({  //setState method is used for updating the value
+            [e.target.name]: e.target.value 
+          })
+      }
     render() {
         return (
             <div class="forget-email-body">
