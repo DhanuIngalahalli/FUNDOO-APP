@@ -104,10 +104,11 @@ export default function MiniDrawer() {
       <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
+               color="inherit"
+               aria-label="open drawer"
+               onClick={handleDrawerOpen}
+               edge="start"
+           >
             sx={{
               marginRight: '36px',
               ...(open && { display: 'none' }),
