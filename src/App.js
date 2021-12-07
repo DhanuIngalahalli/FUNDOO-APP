@@ -13,6 +13,7 @@ function App() {
          {/* <Forget /> */}
          {/* <Reset/> */}
          <Dashboard />
+      
     </div>
   );
 }
