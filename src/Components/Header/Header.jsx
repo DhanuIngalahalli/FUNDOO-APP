@@ -23,6 +23,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import InputBase from "@mui/material/InputBase";
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
+import { TakeoutDiningTwoTone } from '@mui/icons-material';
+import Takenote from '../Takenote/Takenote';
 
 const drawerWidth = 240;
 const state = false;
@@ -216,6 +218,12 @@ export function Header() {
                         )}
                     </List>
                 </Drawer>
+                <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                    <DrawerHeader />
+                <Typography >
+                        <Takenote />
+                    </Typography>
+            </Box>
             </Box>
         </div>
     )

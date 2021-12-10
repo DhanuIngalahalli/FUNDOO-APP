@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import './Reset.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-//import Userservice from '../../Service/Userservice'
-//let userservice = new Userservice();
-
+import Userservice from '../../Service/Userservice'
+let userservice = new Userservice();
 
 export class Reset extends Component {
     constructor(props) {
@@ -37,16 +36,16 @@ export class Reset extends Component {
             "newpassword":this.state.newpassword ,
             "confirmpassword":this.state.confirmPwd,
             }
-        //    Userservice.Registration("http://fundoonotes.incubation.bridgelabz.com/api/user/reset-password",data)
-        //    .then(()=>{
-        //        console.log("successfull reset");
-        //    })
-        //    .catch((err)=>{
-         //       console.log(err);
-        //    });
+           userservice.Reset("http://fundoonotes.incubation.bridgelabz.com/api/user/reset-password",data)
+          .then(()=>{
+              console.log("successfull reset");
+           })
+            .catch((err)=>{
+               console.log(err);
+           });
        }
     };
-      changeHandle =()=>{
+      changeHandle =(e)=>{
         this.setState({
             [e.target.name]:e.target.value
         })

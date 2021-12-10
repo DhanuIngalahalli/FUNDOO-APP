@@ -3,6 +3,7 @@ import './Forget.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Userservice from '../../Service/Userservice'
+import {BrowserRouter,Route} from 'react-router-dom';
 let userservice = new Userservice();
 
 export class Forget extends Component {
@@ -44,7 +45,7 @@ export class Forget extends Component {
 }
     
       changeHandle =(e)=>{
-          this.setState({  //setState method is used for updating the value
+          this.setState({  
             [e.target.name]: e.target.value 
           })
       }
@@ -64,7 +65,10 @@ export class Forget extends Component {
             <form>
                 <TextField fullWidth label="Phone number or email" name="emailorPhone" size="medium" margin="normal" sx={{marginTop:'40px'}}/>
                 <div class="button">
-                <Button variant="contained" onClick={this.next}>Next</Button>
+                <Route>
+                            <Button onClick={()=>{"/Forget"}}></Button>
+                           <Button variant="contained" onClick={this.next}>Next</Button>
+                </Route>
                 </div>
             </form>
         </div>

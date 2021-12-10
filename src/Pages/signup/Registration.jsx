@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField'
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Userservice from '../../Service/Userservice'
+import {BrowserRouter,Route,Routes} from 'react-router-dom';
 let userservice = new Userservice();
 
 export class Registration extends Component {
@@ -97,8 +98,10 @@ export class Registration extends Component {
                             <Checkbox/> Show password
                         </div>
                        <div class="buttons">
-                            <Button>Sign in instead</Button>
-                            <Button variant="contained" onClick={this.next}>Next</Button>
+                            <Route>
+                            <Button onClick={()=>{"/Login"}}>Sign in instead</Button>
+                            <Button variant="contained" onClick={this.next}>Next</Button></Route>
+                           
                         </div>
                         </div>
                     </div>
