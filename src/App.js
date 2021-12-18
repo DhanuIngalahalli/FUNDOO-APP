@@ -16,6 +16,7 @@ function App() {
     <Route path = '/Forget' component={Forget} />
     <Route path = '/Reset' component={Reset} /> */}
          <Dashboard /> 
+         {/* <Login /> */}
     </div>
     //</Routes>
    // </BrowserRouter>

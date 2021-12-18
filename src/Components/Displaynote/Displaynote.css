@@ -1,0 +1,11 @@
+.notes {
+    height:80vh;
+    width: 80vw;
+    border:1px;
+    position: relative;
+    left:250px;
+    top:50px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }  

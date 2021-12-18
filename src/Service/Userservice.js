@@ -1,8 +1,8 @@
 import Axiosservice  from "./Axiosservice";
 const headerConfig = {
     headers: { 
-        'Content-Type': 'application/json',
-        "Authorization": localStorage.getItem("token")
+       // 'Content-Type': 'application/json',
+        Authorization: localStorage.getItem("token")
      }
 }
 

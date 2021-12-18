@@ -1,0 +1,30 @@
+.header {
+    border: 2px solid #dedfe2;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+   
+}
+.header > .right-side{
+    display: flex;
+    flex-direction: row;
+   
+}
+.header > .Search{
+   padding-right: 20vw;
+   border-radius: 10px;
+   border:2px solid #dadce0;
+   margin-right: 27vw;
+   
+    
+}
+.header > .left-side{
+    display: flex;
+    flex-direction: row;
+    padding-right: 10vw;
+}
+.header>.left-side>.span{
+    text-align: center;
+
+}
