@@ -55,7 +55,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function MiniDrawer({opennav}) {
+export default function MiniDrawer({opennav,changeToUpdatedNote}) {
   const theme = useTheme();
 
 
@@ -67,7 +67,7 @@ export default function MiniDrawer({opennav}) {
          
         <List>
           
-            <ListItem button key="Notes">
+            <ListItem button key="Notes"onClick={()=>changeToUpdatedNote("Notes")}>
               <ListItemIcon>
               <LightbulbOutlinedIcon /> 
               </ListItemIcon>
@@ -88,14 +88,14 @@ export default function MiniDrawer({opennav}) {
               <ListItemText primary="Edit labels" />
             </ListItem>
 
-            <ListItem button key="Archive">
+            <ListItem button key="Archive"onClick={()=>changeToUpdatedNote("Archive")}>
               <ListItemIcon>
               <ArchiveOutlinedIcon /> 
               </ListItemIcon>
               <ListItemText primary="Archive" />
             </ListItem>
 
-            <ListItem button key="Trash">
+            <ListItem button key="Trash"onClick={()=>changeToUpdatedNote("Trash")}>
               <ListItemIcon>
               <DeleteOutlineOutlinedIcon /> 
               </ListItemIcon>

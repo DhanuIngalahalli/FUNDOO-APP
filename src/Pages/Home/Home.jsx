@@ -4,40 +4,36 @@ import Displaynote from '../../Components/Displaynote/Displaynote'
 import Note2 from '../../Components/Displaynote/Note2';
 import Takenote from '../../Components/Takenote/Takenote';
 import MiniDrawer from '../../Components/Navbar/Drawer';
-import Userservice from '../../Service/Userservice';
 
 
-const userservice = new Userservice();
 
 export default function Home({opennav}) {
   
- const [Notearr, setNotearr] = React.useState([]);
+  const[update,setUpdate] = React.useState(true)
+  const[color,setColor] = React.useState(" ")
+  const[typeOfNote,settypeOfNote] =React.useState("Notes") 
+  
+  
+  const listenToTakeNote=(data) =>{
+      console.log(data);
+      setUpdate(!update);
+      setColor(!color)
+      
+  }
+  
+  const changeToUpdatedNote=(data)=>{
+  
+  console.log(data);
+  settypeOfNote(data);
+  
+  }
     
 
- React.useEffect(() => {
-        displayNotes()
-        }, [])
-
-
-    const displayNotes = () => {
-   
-        userservice.displayNotes("http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList")
-            .then((res)=>{
-               // console.log(res.data.data.data);
-             setNotearr([res.data.data.data])
-            
-            })
-            .catch ((err)=> {
-                console.log(err);
-            });
-    }
-
-
-    return (
+  return (
         <div>
-           <Takenote />
-           <Displaynote/> 
-           <MiniDrawer opennav={opennav}/>    
+           <Takenote  listenToTakeNote={listenToTakeNote}/>
+           <Displaynote typeOfNote={typeOfNote} update={update} color={color}/> 
+           <MiniDrawer changeToUpdatedNote={changeToUpdatedNote} opennav={opennav}/>    
        </div>
     )
 }

@@ -68,9 +68,10 @@ export class Login extends Component {
                 <span style={{color:'rgb(251, 188, 5)'}}>n</span>
                 <span style={{color:'rgb(17, 142, 226)'}}>d</span>
                 <span style={{color:'rgb(234, 67, 53)'}}>o</span>
+                <span style={{color:'rgb(251, 188, 5)'}}>o</span>
                 </div>
-                <h1 class="header">Sign in</h1>
-                <span class="text">Use your Fundo account</span>
+                <h1 class="Login-header">Sign in</h1>
+                <span class="text">Use your Fundoo account</span>
                 <form>
                     <TextField fullWidth label="Email or Phone" name="emailorPhone" size="medium" margin="dense" error={this.state.emailorPhoneerror} helperText={this.state.emailorPhoneerror ? "Enter Email or Phone" : ' '} onChange={e=> this.changeHandle(e)} sx={{marginTop:'20px'}}/>
                     <p class="text1" >Forgot email?</p>
